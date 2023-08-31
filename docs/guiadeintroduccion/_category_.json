@@ -1,0 +1,8 @@
+{
+  "label": "Guía de Introducción",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Conceptos importantes para entender la Documentación"
+  }
+}

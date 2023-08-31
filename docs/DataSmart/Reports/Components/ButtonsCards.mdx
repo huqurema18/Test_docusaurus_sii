@@ -1,0 +1,80 @@
+import Highlight from "@site/src/reactComponentsEx/ButtonCards.js"
+
+# Documentación del Componente `ButtonsCards` en React
+
+## Introducción
+
+El componente `ButtonsCards` es un componente de React que muestra una tarjeta interactiva. Estas tarjetas pueden ser usadas para navegar a diferentes rutas o ejecutar acciones específicas cuando se hacen clic en ellas. 
+
+## Props
+
+`actualRute` | | 
+------------ | -------------
+**Tipo** | `String`
+**Descripción** | Ruta actual que determina el comportamiento del botón.
+
+`nombreDelBoton` | | 
+------------ | -------------
+**Tipo** | `String`
+**Descripción** | Nombre que será mostrado en la tarjeta.
+
+`setTitulo` | | 
+------------ | -------------
+**Tipo** | `Function`
+**Descripción** | Función para establecer el título del componente.
+
+`editado` | | 
+------------ | -------------
+**Tipo** | `Boolean`
+**Descripción** | Indica si la tarjeta del componente está en modo de edición o no.
+
+`onClick` | | 
+------------ | -------------
+**Tipo** | `Function`
+**Descripción** | Función que se ejecuta cuando el botón es clickeado en modo de edición.
+
+
+## Métodos
+
+### `handleClick`
+
+Maneja el clic en la tarjeta. Navega al otro componente `dashPage`, navegará al componente `ReportsPage` o se irá a una ruta que no necesite ningún reporte.
+
+### `selectComponent`
+
+-   **Parámetros**: `actualRute (String)`
+-   **Retorno**: `Boolean`
+
+Determina si se debe navegar al `ReportsPage` o a un informe en el `dashPage` basado en la `actualRute`.
+
+### `chooseRuteReportsWithoutBI`
+
+-   **Parámetros**: `actualRute (String)`
+
+Recibe la ruta, si una de las rutas coincide redirige a una ruta que no contiene Reportes embebidos.
+
+## Ejemplo de Uso
+
+```jsx 
+<ButtonsCards
+  actualRute="path../ruta-actual"
+  nombreDelBoton="Nombre del Botón"
+  setTitulo={setTituloFuncion}
+  editado={true}
+  onClick={onClickFuncion}
+/>
+```
+## Estilos
+
+-   `.status-card` y `.status-card-editado`: Clases de CSS para la tarjeta en su estado normal y editado respectivamente.
+
+## Dependencias
+
+-   `useNavigate` de `react-router-dom`: Para la navegación entre rutas.
+-   `getDaigramStorage` y `exportNestedObject` de `../utils`: Para obtener y manipular información almacenada localmente del Arbol de rutas.
+-   `SearchIcons` de `../drawable/icons`: Para mostrar iconos en la tarjeta.
+
+## ejemplo
+
+<Highlight color="#25c2a0">Docusaurus green</Highlight>
+<Highlight color="#25c2a0">Siigo</Highlight>
